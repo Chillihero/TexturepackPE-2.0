@@ -1,0 +1,114 @@
+/*===================================TEMP=======================================*/
+
+.temp1 {
+  margin-top: 40px;
+}
+
+.temp2 {
+  text-align: center;
+}
+
+.temp3 {
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+.temp4 {
+margin-bottom: 270%;
+}
+.temp5 {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.temp6 {
+  margin-left: 5%;
+}
+.temp7 {
+  text-align: center;
+  margin-bottom: 4%;
+}
+.temp8 {
+  text-align: center;
+}
+
+.filterDiv {
+  display: none;
+}
+.temp9 {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.show {
+  display: block;
+}
+/*===========================FOOTER====================================*/
+.footer {
+  position: bottom;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgb(196, 192, 192);
+  color: rgb(0, 0, 0);
+  height: 40px;
+  text-align: center;
+  align-items: center;
+}
+@media (max-width: 983px) {
+  .temp4 {
+    margin-bottom: 162%;
+  }
+}
+
+.footer ul,
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.card {
+  box-shadow: 0 3px 3px -2px rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 1px 8px 0 rgba(0,0,0,.12);
+}
+/*==========================SEARCH=======================================*/
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*==========================================IMGEFFECT==========================================*/
+.grow img{
+  transition: 1s ease;
+  }
+  
+  .grow img:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s ease;
+  }
+  /*==========================================NAV=======================================*/
+  .navbar {
+    margin-bottom: 2%;
+  }
+    /*==========================================404=======================================*/
+.temp20 {
+text-align: center;
+margin-top: 10%;
+margin-bottom: 30%;
+}

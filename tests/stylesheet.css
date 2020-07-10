@@ -1,0 +1,70 @@
+body {
+    text-align: center;
+    background-size: 100vh 100vw;
+    font-family: Arial, serif;
+}
+.cart {
+    padding-top: 15px;
+    position: center;
+    margin-top: 5vh;
+    margin-left: 35vw;
+    width: 600px;
+    height: 500px;
+    box-shadow: 0 0 1em 0.5em magenta;
+}
+.hue-horizontal {
+    background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
+    33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+    background: -webkit-linear-gradient(to right, #f00 0%, #ff0
+    17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+    height: 20px;
+    width: 300px;
+    padding-left: 30vw;
+}
+.cart input {
+    border: 1px black;
+    height: 30px;
+    width: 200px;
+    color: black;
+    text-align: center;
+}
+.input {
+    width: 200px;
+    height: 50px;
+    border: 1px black;
+    color: black;
+}
+.border_black {
+    border: 1px black;
+    font-size: 16px;
+}
+hr {
+    height: 3px;
+    margin: 20px 50px 20px 50px;
+    background-color: lightgray;
+}
+.field_permissions {
+    min-height: 50px;
+    min-width: 400px;
+}
+
+.submitButton {
+    background-color: deepskyblue;
+    border: 4px black;
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    border-radius: 3px;
+}
+
+summary {
+    font-size: 25px;
+}
+
+.rankformat {
+    border-radius: 20px;
+    border: 2px;
+    background-color: white;
+    box-sizing: content-box;
+}
