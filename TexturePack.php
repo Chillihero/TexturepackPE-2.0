@@ -1,5 +1,5 @@
 <?php
-
+//this is a comment
 class TexturePack {
 
     /** @var string $author */
