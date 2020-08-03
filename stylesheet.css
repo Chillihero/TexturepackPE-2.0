@@ -188,3 +188,88 @@ body{
 }
 
 /*======================================LOGIN END====================================================*/
+.accountCard {
+    margin-top: 15vh;
+    margin-left: 30vw;
+    /*box-shadow: 0 0 20px black, 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue, 20px -15px 30px red;*/
+    box-shadow: 0 0 20px #628b94, 20px 15px 30px #628b94, -20px 15px 30px #628b94, -20px -15px 30px #628b94, 20px -15px 30px #628b94;
+    width: 700px;
+    height: 500px;
+    padding-top: 1px;
+    border-radius: 10px;
+}
+.header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, serif;
+}
+hr {
+    height: 2px;
+    /*background-image: linear-gradient(to right, #ff0000, #ff4000, #ff8000, #ffbf00, #ffff00, #bfff00, #80ff00, #40ff00, #00ff00, #00ff40, #00ff80, #00ffbf, #00ffff, #00bfff, #0080ff, #0040ff, #0000ff, #4000ff, #8000ff, #bf00ff, #ff00ff, #ff00bf, #ff0080, #ff0040);*/
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: black;
+}
+.leftSide {
+    margin-left: 30px;
+}
+.leftSide img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 110px;
+    border: 5px solid gray;
+}
+.leftSide a {
+    margin-top: 5px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 25px;
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    margin-left: 32px;
+    font-size: 16px;
+    font-weight: lighter;
+    border-radius: 10px;
+}
+a :before {
+    color: black;
+}
+a :hover {
+    color: darkgray;
+}
+a :after {
+    color: black;
+}
+
+.rightSide {
+    height: 250px;
+    text-align: left;
+    vertical-align: middle;
+}
+.rightSide img {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.right {
+    margin-right: 40px;
+    float: right;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#input_field {
+    float: right;
+    margin-right: 160px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: lighter;
+    margin-left: 75px;
+    color: black;
+    width: 225px;
+    height: 40px;
+}

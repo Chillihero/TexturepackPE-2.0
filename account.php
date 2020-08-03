@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-ini_set("max_file_uploads", 10);
-ini_set("upload_max_filesize", 10000000);
-ini_set("file_uploads", 1);
+
 require("TexturePacksPE.php");
 require("User.php");
 require("MySQLProvider.php");
@@ -23,7 +21,7 @@ $critialData = [
 ?>
 <html>
     <head>
-        <title> Benutzerinterface </title>
+        <title> Userinterface </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -44,6 +42,7 @@ $critialData = [
     </head>
     <body>
     <?php
+
     if (!isset($_SESSION["username"])) {
         echo "<p class='error'> You are not logged in to your account! <a href='login.php'> Login now</a>";
         return;
@@ -56,7 +55,8 @@ $critialData = [
             if (isset($critialData[$data]) and $critialData[$data] === true) return;
         }
     }
-    if (isset($_POST["Packname"]) and isset($_POST["Packauthor"]) and isset($_POST["Packlink"]) and isset($_FILES["file"])) {
+
+    if (isset($_POST["Packname"]) and isset($_POST["Packauthor"]) and isset($_POST["Packlink"]) and isset($_FILES["file"]) and isset($_POST["tags"])) {
 
         $id = rand(0, 999999999999999999);
         $check = getimagesize($_FILES["file"]["tmp_name"]);
@@ -71,25 +71,32 @@ $critialData = [
         } else {
             $ext = ($check["mime"] === "image/png" ? ".png" : ".jpg");
             copy($_FILES["file"]["tmp_name"], "img/" . $id . $ext);
-            $tp = new TexturePack($_POST["Packname"], $_SESSION["username"], $_POST["Packauthor"], $_POST["Packlink"], "img/" . $id . $ext, $id);
+            $tags = [];
+            $tp = new TexturePack($_POST["Packname"], $_SESSION["username"], $_POST["Packauthor"], $_POST["Packlink"], "img/" . $id . $ext, $tags, $id);
             $loader->mysql->createTexturePack($tp);
             echo "<p class='success'> You successfully created your texturepack " . $_POST["Packname"] . "</p>";
         }
     }
-
     ?>
-
     <h1> Your Account </h1><br>
 
-    <h2> Profile </h2>
-    <details>
-        <summary> <img src="img/internal/arrow_left.png" width="100" height="100"> </summary>
-        <details class="">
-            <label for="avatar_upload" class="dropdown-item text-normal" style="cursor: pointer;" role="menuitem" tabindex="0">
-                    Upload a photo…
-                </label>
-        </details>
+    <div class="accountCard">
+        <div class="header">
+            <h2>Profile</h2>
+            <hr>
+        </div>
+        <div class="leftSide">
 
+            <form method="post" action="account.php">
+                <div class="rightSide">
+                    <p><img src="img/internal/default_icon.jpg"> <span class="right"> Welcome to your profile!<br>Change your profile - image<br> by clicking on the button below<br> your latest image! <br>If you want to change / set a url<br> to e.g your YouTube channel,<br> change the value of the input below.<br>Have fun!</span> </p>
+                    <input id="input_field" type="url" name="profile_url_input" placeholder="Enter a url...">
+                </div>
+                <a href="#"> Upload image </a>
+            </form>
+        </div>
+
+    </div>
     <h2>Your uploaded TexturePacks: </h2><br>
 
     <ul>
@@ -106,11 +113,7 @@ $critialData = [
                                 <li><a href="<?php echo $pack->getLink(); ?>"
                                        target="_blank"><?php echo $pack->getName(); ?></a></li>
                             </h4>
-                            <p class="card-text"> Uploader: <?php echo $pack->getAuthor(); ?> <br>
-                                Creator: <?php echo $pack->getCreator(); ?> <br>
-                                Download: <a
-                                        href="<?php echo $pack->getLink(); ?>"
-                                        target="_blank">Click here</a>
+                            <p class="card-text"> Creator: <?php echo $pack->getCreator()();  ?> <br>
                             </p>
                         </div>
                     </div>
@@ -119,15 +122,6 @@ $critialData = [
             }
             ?>
         </div>
-        <!--<details>
-            <summary>Create a Texturepack </summary>
-            <form method="post" action="account.php" class="textureCreate" enctype="multipart/form-data" >
-                <p><input placeholder="Packname" name="Packname" required="required"> </p>
-                <p><input placeholder="Packcreator" name="Packauthor" required="required"> </p>
-                <p><input placeholder="Link to download" name="Packlink" required="required"> </p>
-                <p> <input type="file" name="file" value="Bild auswählen" id="file" required="required" accept="image/*"> </p>
-                <button type="submit"> Create </button>
-            </form>
-        </details> !-->
+    </ul>
     </body>
 </html>

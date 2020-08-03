@@ -17,15 +17,19 @@ class TexturePack {
     /** @var string $creator */
     private $creator;
 
+    /** @var array $tags */
+    private $tags = [];
+
     private $id;
 
-    public function __construct(string $packName, string $author, string $creator, string $link, string $image, int $id)
+    public function __construct(string $packName, string $author, string $creator, string $link, string $image, array $tags, int $id)
     {
         $this->packName = $packName;
         $this->author = $author;
         $this->image = $image;
         $this->link = $link;
         $this->creator = $creator;
+        $this->tags = $tags;
         $this->id = $id;
     }
 
@@ -75,5 +79,13 @@ class TexturePack {
     public function getId(): int
     {
         return $this->id;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTags(): array
+    {
+        return $this->tags;
     }
 }
